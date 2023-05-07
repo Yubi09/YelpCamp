@@ -117,12 +117,12 @@
                                 </div>
                             </div>
                             <% } %>
+            </div>
         </div>
-    </div>
 
-    <script>
-        const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-        const campground = <%- JSON.stringify(campground) %>
-    </script>
+        <script>
+            const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+            const campground = <%- JSON.stringify(campground) %>
+        </script>
 
-    <script src="/javascripts/showPageMaps.js"></script>
+        <script src="/javascripts/showPageMaps.js"></script>

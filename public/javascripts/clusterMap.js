@@ -7,7 +7,11 @@ const map = new mapboxgl.Map({
   zoom: 3,
 });
 
+<<<<<<< HEAD
+map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
+=======
 map.addControl(new mapboxgl.NavigationControl(), 'bottom-left');
+>>>>>>> master
 
 map.on("load", () => {
   // Add a new source from our GeoJSON data and
@@ -97,7 +101,7 @@ map.on("load", () => {
   map.on("click", "unclustered-point", (e) => {
     const { popUpMarkup } = e.features[0].properties;
     const coordinates = e.features[0].geometry.coordinates.slice();
-    
+
     // Ensure that if the map is zoomed out such that
     // multiple copies of the feature are visible, the
     // popup appears over the copy being pointed to.
@@ -105,10 +109,7 @@ map.on("load", () => {
       coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
     }
 
-    new mapboxgl.Popup()
-      .setLngLat(coordinates)
-      .setHTML(popUpMarkup)
-      .addTo(map);
+    new mapboxgl.Popup().setLngLat(coordinates).setHTML(popUpMarkup).addTo(map);
   });
 
   map.on("mouseenter", "clusters", () => {
