@@ -7,11 +7,7 @@ const map = new mapboxgl.Map({
   zoom: 3,
 });
 
-<<<<<<< HEAD
 map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
-=======
-map.addControl(new mapboxgl.NavigationControl(), 'bottom-left');
->>>>>>> master
 
 map.on("load", () => {
   // Add a new source from our GeoJSON data and
